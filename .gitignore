@@ -2,5 +2,6 @@ node_modules
 .DS_Store
 !dist/index.html
 dist
+www/js/out.js
 .env
 .idea
