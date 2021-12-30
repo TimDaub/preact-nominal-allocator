@@ -6,9 +6,14 @@ esbuildServe(
     {
         logLevel: "info",
         entryPoints: ["src/index.js"],
+        jsxFactory: 'h',
+        jsxFragment: 'Fragment',
+        loader: {".js": "jsx"},
         bundle: true,
         outfile: "dist/bundle.js",
-        sourcemap: true,
     },
-    { root: "dist" }
+{ root: "dist" }
 );
+
+/*
+"esbuild ./src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx --jsx-factory=h --jsx-fragment=Fragment --serve=5000 --servedir=dist"*/
