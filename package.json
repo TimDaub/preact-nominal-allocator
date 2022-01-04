@@ -22,7 +22,7 @@
   "homepage": "https://github.com/TimDaub/preact-nominal-allocator#readme",
   "dependencies": {
     "htm": "3.1.0",
-    "preact": "^10.6.4"
+    "preact": "10.6.4"
   },
   "devDependencies": {
     "esbuild": "^0.14.9",
