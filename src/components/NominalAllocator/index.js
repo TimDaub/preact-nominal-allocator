@@ -16,10 +16,10 @@ function NominalAllocator(props) {
 
   const rangeCheck = event => {
     if (event.target.value > props.max) {
-      props.onUpdate(12);
+      props.onUpdate(props.max);
     }
     if (event.target.value < props.min) {
-      props.onUpdate(0);
+      props.onUpdate(props.min);
     }
   };
 
