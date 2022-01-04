@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "build": "esbuild ./src/index.js --bundle --format=esm --outfile=dist/bundle.js",
+    "build": "esbuild ./src/index.js --bundle --format=esm --outfile=www/js/out.js",
     "watch": "esbuild ./src/index.js --bundle --format=esm --outfile=www/js/out.js --watch",
     "serve": "esbuild --serve --servedir=www",
     "dev": "concurrently \"npm run serve\" \"npm run watch\""
@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/TimDaub/preact-nominal-allocator#readme",
   "dependencies": {
-    "preact": "10.6.4",
-    "htm": "3.1.0"
+    "htm": "3.1.0",
+    "preact": "^10.6.4"
   },
   "devDependencies": {
     "esbuild": "^0.14.9",
