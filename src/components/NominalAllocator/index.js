@@ -2,20 +2,19 @@
 import { html } from "htm/preact";
 
 function NominalAllocator(props) {
-
   const increment = () => {
     if (props.value < props.max) {
-      props.onUpdate(props.value +1);
+      props.onUpdate(props.value + 1);
     }
   };
 
   const decrement = () => {
     if (props.value > props.min) {
-      props.onUpdate(props.value -1);
+      props.onUpdate(props.value - 1);
     }
   };
 
-  const rangeCheck = (event) => {
+  const rangeCheck = event => {
     if (event.target.value > props.max) {
       props.onUpdate(props.max);
     }
@@ -24,13 +23,37 @@ function NominalAllocator(props) {
     }
   };
 
-  const { allocatorButtonPlus, allocatorNumberInput, allocatorButtonMinus } = props.classes;
+  const {
+    allocatorButtonPlus,
+    allocatorNumberInput,
+    allocatorButtonMinus
+  } = props.classes;
   return html`
-      <div class="">
-        <button class="${allocatorButtonPlus}" type="button" onClick="${decrement}">-</button>
-        <input class="${allocatorNumberInput}" type="number" min="${props.min}" max="${props.max}" value=${props.value} onkeyup="${(e) => rangeCheck(e)}"/>
-        <button class="${allocatorButtonMinus}" type="button" onClick="${() => increment()}">+</button>
-      </div>`
+    <div class="">
+      <button
+        class="${allocatorButtonPlus}"
+        type="button"
+        onClick="${decrement}"
+      >
+        -
+      </button>
+      <input
+        class="${allocatorNumberInput}"
+        type="number"
+        min="${props.min}"
+        max="${props.max}"
+        value=${props.value}
+        onkeyup="${e => rangeCheck(e)}"
+      />
+      <button
+        class="${allocatorButtonMinus}"
+        type="button"
+        onClick="${() => increment()}"
+      >
+        +
+      </button>
+    </div>
+  `;
 }
 
 export default NominalAllocator;
