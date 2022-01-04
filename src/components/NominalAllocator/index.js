@@ -16,9 +16,9 @@ function NominalAllocator(props) {
 
   return html`
       <div>
-        <button type="button" onClick="${() => decrement()}" value="-" />
+        <button type="button" onClick="${() => decrement()}">-</button>
         <input type="number" min="${props.min}" max="${props.max}" value=${props.value} />
-        <button type="button" onClick="${() => increment()}" value="+" />
+        <button type="button" onClick="${() => increment()}">+</button>
       </div>`
 }
 
