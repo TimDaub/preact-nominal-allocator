@@ -2,10 +2,12 @@
 import { html } from "htm/preact";
 
 function NominalAllocator(props) {
+
   const increment = () => {
     if (props.value < props.max) {
       props.onUpdate(props.value +1);
     }
+
   };
 
   const decrement = () => {
@@ -14,11 +16,20 @@ function NominalAllocator(props) {
     }
   };
 
+  const rangeCheck = (event) => {
+    if (event.target.value > props.max) {
+      props.onUpdate(props.max);
+    }
+    if (event.target.value < props.min) {
+      props.onUpdate(props.min);
+    }
+  };
+
   return html`
       <div>
-        <button type="button" onClick="${() => decrement()}" value="-" />
-        <input type="number" min="${props.min}" max="${props.max}" value=${props.value} />
-        <button type="button" onClick="${() => increment()}" value="+" />
+        <button type="button" onClick="${() => decrement()}">-</button>
+        <input type="number" min="${props.min}" max="${props.max}" value=${props.value} onkeyup="${(e) => rangeCheck(e)}"/>
+        <button type="button" onClick="${() => increment()}">+</button>
       </div>`
 }
 
