@@ -16,42 +16,24 @@ function NominalAllocator(props) {
 
   const rangeCheck = event => {
     if (event.target.value > props.max) {
-      props.onUpdate(props.max);
+      props.onUpdate(12);
     }
     if (event.target.value < props.min) {
-      props.onUpdate(props.min);
+      props.onUpdate(0);
     }
   };
 
-  const {
-    allocatorButtonPlus,
-    allocatorNumberInput,
-    allocatorButtonMinus
-  } = props.classes;
   return html`
-    <div class="">
-      <button
-        class="${allocatorButtonPlus}"
-        type="button"
-        onClick="${decrement}"
-      >
-        -
-      </button>
+    <div>
+      <button type="button" onClick="${() => decrement()}">-</button>
       <input
-        class="${allocatorNumberInput}"
         type="number"
         min="${props.min}"
         max="${props.max}"
         value=${props.value}
         onkeyup="${e => rangeCheck(e)}"
       />
-      <button
-        class="${allocatorButtonMinus}"
-        type="button"
-        onClick="${() => increment()}"
-      >
-        +
-      </button>
+      <button type="button" onClick="${() => increment()}">+</button>
     </div>
   `;
 }
