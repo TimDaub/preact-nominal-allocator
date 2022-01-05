@@ -2,6 +2,7 @@
 import { html } from "htm/preact";
 
 function NominalAllocator(props) {
+
   const increment = () => {
     if (props.value < props.max) {
       props.onUpdate(props.value +1);
