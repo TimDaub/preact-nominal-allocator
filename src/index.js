@@ -7,7 +7,6 @@ import preset from 'jss-preset-default'
 
 const jss = create(preset());
 
-// Create your style.
 const style = {
     allocatorButtonPlus: {
       backgroundColor: 'green',

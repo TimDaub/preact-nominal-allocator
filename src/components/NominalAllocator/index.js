@@ -7,7 +7,6 @@ function NominalAllocator(props) {
     if (props.value < props.max) {
       props.onUpdate(props.value +1);
     }
-
   };
 
   const decrement = () => {
