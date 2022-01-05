@@ -23,6 +23,7 @@
   "dependencies": {
     "htm": "3.1.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "preact": "10.6.4",
     "jss": "10.9.0",
     "jss-preset-default": "10.9.0"
@@ -31,6 +32,11 @@
     "jss-preset-default": "10.9.0",
     "preact": "10.6.4"
 >>>>>>> 0bd9f6b... added JSS function to serve css attributes to the NominalAllocator
+=======
+    "jss": "10.9.0",
+    "jss-preset-default": "10.9.0",
+    "preact": "10.6.4"
+>>>>>>> 1da3a89... added JSS function to serve css attributes to the NominalAllocator
   },
   "devDependencies": {
     "concurrently": "6.5.1",
