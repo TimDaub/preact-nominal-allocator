@@ -23,19 +23,13 @@ function NominalAllocator(props) {
     }
   };
 
+  const { allocatorButtonPlus, allocatorNumberInput, allocatorButtonMinus } = props.classes;
   return html`
-    <div>
-      <button type="button" onClick="${() => decrement()}">-</button>
-      <input
-        type="number"
-        min="${props.min}"
-        max="${props.max}"
-        value=${props.value}
-        onkeyup="${e => rangeCheck(e)}"
-      />
-      <button type="button" onClick="${() => increment()}">+</button>
-    </div>
-  `;
+      <div class="">
+        <button class="${allocatorButtonPlus}" type="button" onClick="${() => decrement()}">-</button>
+        <input class="${allocatorNumberInput}" type="number" min="${props.min}" max="${props.max}" value=${props.value} onkeyup="${(e) => rangeCheck(e)}"/>
+        <button class="${allocatorButtonMinus}" type="button" onClick="${() => increment()}">+</button>
+      </div>`
 }
 
 export default NominalAllocator;
