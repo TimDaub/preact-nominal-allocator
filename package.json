@@ -27,7 +27,7 @@
     "preact": "10.6.4"
   },
   "devDependencies": {
-    "esbuild": "^0.14.9",
-    "concurrently": "6.5.1"
+    "concurrently": "6.5.1",
+    "esbuild": "0.14.10"
   }
 }
