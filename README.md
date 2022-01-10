@@ -62,14 +62,13 @@ npm i preact-nominal-allocator
 
 - Attributes:
   - `min` lowest input value
-  -  `max` highest input value
-  -  `value` current value
-  -  `onUpdate` used to update the current value
+  - `max` highest input value
+  - `onUpdate` used to update the current value
     
 `NominalAllocator` inserts inline classes via [JSS](https://cssinjs.org).  It
-  allows users to customize its style (via `styles` attribute) by adjusting
-  classes like  `.allocatorContainer`,`.allocatorButtonPlus`,
-  `.allocatorButtonMinus`, and `.allocatorNumberInput`.
+allows users to customize its style (via `styles` attribute) by adjusting
+classes like  `.allocatorContainer`,`.allocatorButtonPlus`,
+`.allocatorButtonMinus`, and `.allocatorNumberInput`.
 
 ## Contributing
 
@@ -79,6 +78,12 @@ $ cd preact-nominal-allocator
 $ npm i
 $ npm run dev
 ```
+
+## Changelog
+
+### 0.0.1 on Jan 10, 2022
+
+- Initial release
 
 ## License
 
