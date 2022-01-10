@@ -1,10 +1,14 @@
 # preact-nominal-allocator
 
+![](./assets/demo.gif)
 
+## Installation
 
-# Usage
+```bash
+npm i preact-nominal-allocator
+```
 
-- Demo
+## Usage
 
 ```html
 <!DOCTYPE html>
@@ -13,65 +17,59 @@
     <meta charset="utf-8" />
     <title>Preact Nominal Allocator Demo</title>
     <script type="module" defer>
-      import { Component, render, h } from "https://unpkg.com/preact?module";
-      import htm from 'https://unpkg.com/htm?module'
-      import preset from 'https://unpkg.com/jss-preset-default@10.9.0'
-      import {create} from "https://unpkg.com/jss@10.9.0";
-      import NominalAllocator from "./src/NominalAllocator.js";
+      import { Component, render, h } from "https://unpkg.com/preact@10.6.4?module";
+      import htm from "https://unpkg.com/htm?module";
+      import preset from "https://unpkg.com/jss-preset-default@10.9.0";
+      import { create } from "https://unpkg.com/jss@10.9.0";
+      import NominalAllocator from "./js/out.js";
 
       const html = htm.bind(h);
       const jss = create(preset());
 
       const style = {
         allocatorContainer: {
-          display:'flex'
+          display: "flex"
         },
         allocatorButtonPlus: {
-          backgroundColor: 'green',
           fontSize: 18
         },
         allocatorButtonMinus: {
-          backgroundColor: 'green',
           fontSize: 18
         },
-        allocatorNumberInput: {
-          backgroundColor: 'green'
-        }
+        allocatorNumberInput: {}
       };
 
       const { classes } = jss.createStyleSheet(style).attach();
 
-      class NominalAllocatorDemo extends Component {
-        state = { value: 3};
-
-        onUpdate = (value) => {
-          this.setState({value: value});
-        };
-
-        render() {
-          return html`
-            <${NominalAllocator} min="${0}" max="${12}" value="${this.state.value}" onUpdate="${this.onUpdate}" styles="${classes}"/>
-            `;
-        }
-      }
-
-      render(html`<${NominalAllocatorDemo} />`, document.body);
+      render(
+        html`
+            <${NominalAllocator}
+              min="${0}"
+              max="${12}"
+              onUpdate="${console.log}"
+              styles="${classes}"
+            />
+        `,
+        document.body
+      );
     </script>
   </head>
   <body></body>
 </html>
 ```
+
 ### Notes
-- Attributes: <br>
-    `min` lowest input value <br>
-    `max` highest input value <br>
-    `value` current value <br>
-    `onUpdate` used to update the current value <br>
+
+- Attributes:
+  - `min` lowest input value
+  -  `max` highest input value
+  -  `value` current value
+  -  `onUpdate` used to update the current value
     
-- `NominalAllocator` inserts inline classes via [JSS](https://cssinjs.org). This
-allows users to customize its style (via `styles` attribute) by adjusting classes like  `.allocatorContainer`,`.allocatorButtonPlus`, `.allocatorButtonMinus`,
-and `.allocatorNumberInput`.
-- 
+`NominalAllocator` inserts inline classes via [JSS](https://cssinjs.org).  It
+  allows users to customize its style (via `styles` attribute) by adjusting
+  classes like  `.allocatorContainer`,`.allocatorButtonPlus`,
+  `.allocatorButtonMinus`, and `.allocatorNumberInput`.
 
 ## Contributing
 
@@ -81,3 +79,7 @@ $ cd preact-nominal-allocator
 $ npm i
 $ npm run dev
 ```
+
+## License
+
+See LICENSE file or package.json.
