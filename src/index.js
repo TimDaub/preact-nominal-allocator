@@ -1,38 +1,36 @@
 // @format
-import { Component } from "preact";
 import { html } from "htm/preact";
-import NominalAllocator from "./components/NominalAllocator";
-import {create} from 'jss'
-import preset from 'jss-preset-default'
 
-const jss = create(preset());
+function NominalAllocator(props) {
 
-const style = {
-    allocatorButtonPlus: {
-      backgroundColor: 'green',
-      fontSize: 18
-    },
-    allocatorButtonMinus: {
-      backgroundColor: 'orange',
-      fontSize: 18
-    },
-    allocatorNumberInput: {
-      backgroundColor: 'yellow'
-    }
-};
+    const increment = () => {
+        if (props.value < props.max) {
+            props.onUpdate(props.value +1);
+        }
+    };
 
-const { classes } = jss.createStyleSheet(style).attach();
+    const decrement = () => {
+        if (props.value > props.min) {
+            props.onUpdate(props.value -1);
+        }
+    };
 
-export class NominalAllocatorContainer extends Component {
-  state = { value: 3};
+    const rangeCheck = (event) => {
+        if (event.target.value > props.max) {
+            props.onUpdate(props.max);
+        }
+        if (event.target.value < props.min) {
+            props.onUpdate(props.min);
+        }
+    };
 
-  onUpdate = (value) => {
-    this.setState({value: value});
-  };
-
-  render() {
+    const { allocatorContainer, allocatorButtonPlus, allocatorNumberInput, allocatorButtonMinus } = props.style;
     return html`
-      <${NominalAllocator} min="${0}" max="${12}" value="${this.state.value}" onUpdate="${this.onUpdate}" classes="${classes}"/>
-    `;
-  }
+      <div class="${allocatorContainer}">
+        <button class="${allocatorButtonPlus}" type="button" onClick="${decrement}">-</button>
+        <input class="${allocatorNumberInput}" type="number" min="${props.min}" max="${props.max}" value=${props.value} onkeyup="${(e) => rangeCheck(e)}"/>
+        <button class="${allocatorButtonMinus}" type="button" onClick="${increment}">+</button>
+      </div>`
 }
+
+export default NominalAllocator;
