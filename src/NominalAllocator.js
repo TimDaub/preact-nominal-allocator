@@ -24,7 +24,7 @@ function NominalAllocator(props) {
         }
     };
 
-    const { allocatorContainer, allocatorButtonPlus, allocatorNumberInput, allocatorButtonMinus } = props.style;
+    const { allocatorContainer, allocatorButtonPlus, allocatorNumberInput, allocatorButtonMinus } = props.styles;
     return html`
       <div class="${allocatorContainer}">
         <button class="${allocatorButtonPlus}" type="button" onClick="${decrement}">-</button>
