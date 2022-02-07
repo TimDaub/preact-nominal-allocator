@@ -37,6 +37,7 @@ export default class NominalAllocator extends Component {
         <input
           class="${allocatorNumberInput}"
           type="number"
+          disabled=${this.props.disabled}
           min=${this.props.min}
           max=${this.props.max}
           value=${value}
