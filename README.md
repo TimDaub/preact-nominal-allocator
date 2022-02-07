@@ -81,6 +81,10 @@ $ npm run dev
 
 ## Changelog
 
+### 0.0.2 on Feb 7, 2022
+
+- Add `disabled` prop
+
 ### 0.0.1 on Jan 10, 2022
 
 - Initial release
